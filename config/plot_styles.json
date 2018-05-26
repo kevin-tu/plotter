@@ -1,0 +1,17 @@
+{
+    "figure.figsize": [6.0, 4.5],
+    "grid.linewidth": 1.2,
+    "grid.linestyle": "--",
+    "axes.linewidth": 1.2,
+    "lines.linewidth": 0.8,
+    "figure.dpi": 80,
+    "savefig.dpi": 200,
+    "font.size": 12,
+    "legend.fontsize": 12,
+    "figure.titlesize": 12,
+    "patch.force_edgecolor": "True",
+    "patch.facecolor": "b",
+    "font.sans-serif": "Times New Roman",
+    "font.family": "sans-serif",
+    "image.cmap": "jet"
+}
