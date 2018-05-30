@@ -1,0 +1,53 @@
+{
+    "file_path": "C:\\Users\\Kevin.Tu\\Documents\\GitHub\\plotter\\data\\S5254CSP_HV.XLSX",
+    "output_folder": "C:\\Users\\Kevin.Tu\\Documents\\GitHub\\plotter\\output",
+    "appendix": "A",
+    "plots": [
+        {
+            "plot_title": "Title",
+            "subplots": [
+                {
+                    "x_index": 0,
+                    "x_label": "Time (seconds)",
+                    "x_max": null,
+                    "x_min": null,
+                    "y_index": [
+                        1
+                    ],
+                    "y_label": "Y label",
+                    "y_min": null,
+                    "y_max": null
+                },
+                {
+                    "x_index": 0,
+                    "x_label": "Time (seconds)",
+                    "x_max": null,
+                    "x_min": null,
+                    "y_index": [
+                        1
+                    ],
+                    "y_label": "Y label",
+                    "y_min": null,
+                    "y_max": null
+                }
+            ]
+        },
+        {
+            "plot_title": "hello",
+            "subplots": [
+                {
+                    "x_index": 0,
+                    "x_label": "Time (seconds)",
+                    "x_max": null,
+                    "x_min": null,
+                    "y_index": [
+                        1
+                    ],
+                    "y_label": "Y label",
+                    "y_min": null,
+                    "y_max": null
+                }
+            ]
+        }
+    ]
+}
