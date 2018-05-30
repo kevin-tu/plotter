@@ -15,7 +15,7 @@
                         1,
                         3
                     ],
-                    "y_label": "Y label",
+                    "y_label": "Active Power (MW)",
                     "y_min": null,
                     "y_max": null
                 },
@@ -29,7 +29,7 @@
                         5,
                         6
                     ],
-                    "y_label": "Y label",
+                    "y_label": "Reactive Power (MVAr)",
                     "y_min": null,
                     "y_max": null
                 },
@@ -43,7 +43,7 @@
                         7,
                         8
                     ],
-                    "y_label": "Y label",
+                    "y_label": "Current (pu)",
                     "y_min": null,
                     "y_max": null
                 },
@@ -57,7 +57,7 @@
                         2,
                         3
                     ],
-                    "y_label": "Y label",
+                    "y_label": "Voltage (pu)",
                     "y_min": null,
                     "y_max": null
                 }

@@ -13,10 +13,10 @@ data_files = glob(data_folder + "/*.xlsx")
 for i, data_path in enumerate(data_files[0:1]):
 
     plot = PlotClass(data_path, output_folder, appendix="A")
-    subplot_1 = SubPlotClass(y_index=[1,3])
-    subplot_2 = SubPlotClass(y_index=[4,5,6])
-    subplot_3 = SubPlotClass(y_index=[1,7,8])
-    subplot_4 = SubPlotClass(y_index=[1,2,3])
+    subplot_1 = SubPlotClass(y_index=[1,3], y_label="Active Power (MW)")
+    subplot_2 = SubPlotClass(y_index=[4,5,6], y_label="Reactive Power (MVAr)")
+    subplot_3 = SubPlotClass(y_index=[1,7,8], y_label="Current (pu)")
+    subplot_4 = SubPlotClass(y_index=[1,2,3], y_label="Voltage (pu)")
     
     plot.add_plot(basename(data_path).split('.')[0])
     plot.add_subplot(0, subplot_1.to_dict())

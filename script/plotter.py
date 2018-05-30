@@ -46,7 +46,7 @@ logging.basicConfig(level=logging.INFO)
 print(os.path.dirname(os.path.abspath(inspect.stack()[0][1])))
 
 plot_cfg_path = abspath("../config/plot_styles.json")
-plot_file_path = abspath("../plot_files/plot.json")
+plot_file_path = abspath("../plot_files/C2WF/1a_WH_330_C2WF_Bannabay_3P_C2WF.json")
 output_folder = abspath("../output")
 
 with open(plot_cfg_path) as plt_style_config:
@@ -79,7 +79,7 @@ for i, plot in enumerate(plot_params['plots']):
     fig.suptitle(plot['plot_title'], fontsize=suptitle_size)
     axes = GenerateAxes(fig, num_subplots)
     plt.tight_layout(pad=4.0, w_pad=4.0, h_pad=4.0)
-
+    
     for k, subplot in enumerate(plot['subplots']):
         InitialiseSubPlot(axes[k], subplot, k)
         x_axis = subplot['x_index']

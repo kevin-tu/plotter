@@ -3,7 +3,7 @@ import json
 class SubPlotClass:
 
     def __init__(self, x_index=0, x_label="Time (seconds)", x_min=None, x_max=None, 
-            y_min=None, y_max=None, y_index=[1], y_label="Y label"):
+            y_min=None, y_max=None, y_index=[1], y_label="Y labe", subtitle=None):
         self.x_index = x_index
         self.x_label = x_label
         self.x_min = x_min
@@ -12,6 +12,7 @@ class SubPlotClass:
         self.y_max = y_max
         self.y_index = y_index
         self.y_label = y_label
+        self.subtitle = subtitle
 
     def to_dict(self):
         subplot_dict = {
