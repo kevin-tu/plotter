@@ -9,6 +9,7 @@ import os
 import sys
 import inspect
 import time
+from glob import glob
 
 # Plotting functions
 
@@ -46,51 +47,70 @@ logging.basicConfig(level=logging.INFO)
 print(os.path.dirname(os.path.abspath(inspect.stack()[0][1])))
 
 plot_cfg_path = abspath("../config/plot_styles.json")
+plot_folder = abspath("../plot_files/C2WF")
+plot_files = glob(plot_folder + "/*.json")
 plot_file_path = abspath("../plot_files/C2WF/1a_WH_330_C2WF_Bannabay_3P_C2WF.json")
-output_folder = abspath("../output")
+output_folder = abspath("../output/C2WF")
 
 with open(plot_cfg_path) as plt_style_config:
     plt_style_params = json.load(plt_style_config)
 
-with open(plot_file_path) as plot_file:
-    plot_params = json.load(plot_file)
-
-file_path = abspath(plot_params['file_path'])
-
 logging.info("Updating default plotting parameters..")
 mpl.rcParams.update(plt_style_params)
 
+
+for plot_number, plot_file_path in enumerate(plot_files):
 # Read in data
 
-logging.info("Reading in file: \t {}".format(file_path))
+    with open(plot_file_path) as plot_file:
+        plot_params = json.load(plot_file)
 
-df = pd.read_excel(file_path, skiprows=4, index_col=0)
+    file_path = abspath(plot_params['file_path'])
 
-start_time = time.time()
+    logging.info("Reading in file: \t {}".format(file_path))
+    df = pd.read_excel(file_path, skiprows=4, index_col=0)
+    start_time = time.time()
 
-logging.info("Number of plots: \t \t [{}]".format(len(plot_params['plots'])))
-for i, plot in enumerate(plot_params['plots']):
-    # logging.info("Number of subplots: \t {}".format(len(plot['subplots'])))
-    # logging.info("Plot number: \t\t {}".format(i))
-    plot_name = "Figure {}-{}.png".format(str(plot_params['appendix']).upper(),str(i+1))
-    suptitle_size = plt_style_params['font.size']
-    num_subplots = len(plot['subplots'])
-    fig = InitialiseFigure(num_subplots, i)
-    fig.suptitle(plot['plot_title'], fontsize=suptitle_size)
-    axes = GenerateAxes(fig, num_subplots)
-    plt.tight_layout(pad=4.0, w_pad=4.0, h_pad=4.0)
-    
-    for k, subplot in enumerate(plot['subplots']):
-        InitialiseSubPlot(axes[k], subplot, k)
-        x_axis = subplot['x_index']
-        y_axis = subplot['y_index']
-#        x_lims = [subplot['x_min'], subplot['x_max']]
-#        y_lims = [subplot['y_min'], subplot['y_max']]
-        df.iloc[:, y_axis].plot(ax=axes[k], grid='on')
+    logging.info("Number of plots: \t \t [{}]".format(len(plot_params['plots'])))
+    for i, plot in enumerate(plot_params['plots']):
+        # logging.info("Number of subplots: \t {}".format(len(plot['subplots'])))
+        # logging.info("Plot number: \t\t {}".format(i))
+        # plot_name = "Figure {}-{}.png".format(str(plot_params['appendix']).upper(), plot_number + 1)
+        plot_name = "Figure {}.png".format(plot_number + 1)
+        suptitle_size = plt_style_params['font.size'] + 4
+        num_subplots = len(plot['subplots'])
+        fig = InitialiseFigure(num_subplots, i)
+        fig.suptitle(plot['plot_title'], fontsize=suptitle_size)
+        axes = GenerateAxes(fig, num_subplots)
+        plt.tight_layout(pad=4.0, w_pad=4.0, h_pad=4.0)
+        
+        for k, subplot in enumerate(plot['subplots']):
+            InitialiseSubPlot(axes[k], subplot, k)
+            x_axis = subplot['x_index']
+            y_axis = subplot['y_index']
+            
+            if subplot['x_min'] is not "null":
+                x_min = subplot['x_min']
+            else:
+                x_min = df.index.min()
 
-    fig.savefig(join(output_folder, plot_name))
-    logging.info("Plotting: {}".format(str(join(output_folder, plot_name))))
+            if subplot['x_min'] is not "null":
+                x_max = subplot['x_max']
+            else:
+                x_max = df.index.max()
 
-end_time = time.time()
+            # if (subplot['x_min'] is not "null") and (subplot['x_max'] is not "null"):
+            x_lims = [x_min, x_max]
 
-logging.info("Plotting completed in {} seconds".format(round(end_time - start_time, 2)))
+            # y_lims = [subplot['y_min'], subplot['y_max']]
+            df.iloc[:, y_axis].plot(ax=axes[k], grid='on', xlim=x_lims)
+            
+            if subplot['subtitle'] is not "null":
+                axes[k].set_title(subplot['subtitle'])
+
+        fig.savefig(join(output_folder, plot_name))
+        logging.info("Plotting: {}".format(str(join(output_folder, plot_name))))
+
+    end_time = time.time()
+
+    logging.info("Plotting completed in {} seconds".format(round(end_time - start_time, 2)))

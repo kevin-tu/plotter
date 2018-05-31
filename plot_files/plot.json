@@ -7,6 +7,7 @@
             "plot_title": "Test plot 1",
             "subplots": [
                 {
+                    "subtitle": "Subtitle 1.1",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -21,6 +22,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 1.2",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -40,6 +42,7 @@
             "plot_title": "Test plot 2",
             "subplots": [
                 {
+                    "subtitle": "Subtitle 2.1",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -54,6 +57,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 2.2",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -68,6 +72,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 2.3",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -87,6 +92,7 @@
             "plot_title": "Test plot 3",
             "subplots": [
                 {
+                    "subtitle": "Subtitle 3.1",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -103,9 +109,10 @@
             ]
         },
         {
-            "plot_title": "Test plot 2",
+            "plot_title": "Test plot 4",
             "subplots": [
                 {
+                    "subtitle": "Subtitle 4.1",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -120,6 +127,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 4.2",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -134,6 +142,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 4.3",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -148,6 +157,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 4.4",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,
@@ -162,6 +172,7 @@
                     "y_min": 0
                 },
                 {
+                    "subtitle": "Subtitle 4.5",
                     "x_index": "index",
                     "x_label": "Time (seconds)",
                     "x_max": 10,

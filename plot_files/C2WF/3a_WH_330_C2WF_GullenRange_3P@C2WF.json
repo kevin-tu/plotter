@@ -1,10 +1,10 @@
 {
-    "file_path": "C:\\Users\\Kevin.Tu\\Documents\\GitHub\\plotter\\data\\C2WF\\1a_WH_330_C2WF_Bannabay_3P_C2WF.xlsx",
+    "file_path": "C:\\Users\\Kevin.Tu\\Documents\\GitHub\\plotter\\data\\C2WF\\3a_WH_330_C2WF_GullenRange_3P@C2WF.xlsx",
     "output_folder": "C:\\Users\\Kevin.Tu\\Documents\\GitHub\\plotter\\output\\C2WF",
     "appendix": "A",
     "plots": [
         {
-            "plot_title": "Figure 1: 1a_WH_330_C2WF_Bannabay_3P_C2WF",
+            "plot_title": "Figure 5: 3a_WH_330_C2WF_GullenRange_3P@C2WF",
             "subplots": [
                 {
                     "subtitle": "Active Power (MW)",
