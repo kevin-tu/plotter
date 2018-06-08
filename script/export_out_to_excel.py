@@ -1,9 +1,9 @@
 import os,sys
-import excelpy, csv
-import psspy, pssarrays
+# import excelpy, csv
+# import psspy, pssarrays
 import dyntools
 
-FILEPATH = os.getcwd()
+FILEPATH = os.path.abspath('U:\\Projects\\PS101926_2208519A\\05_WrkPapers\\WP\\GPS Report Technical Record\\Results_7June18')
 print('WD=' + FILEPATH)
 
 #redirect.psse2py()
@@ -14,9 +14,9 @@ Excel ='Template.xlsx'
 for outfile in os.listdir(FILEPATH):
     if outfile.endswith(".out"):
 		dyn = dyntools.CHNF(outfile)
-                xl = excelpy.workbook(xlsfile=Excel,mode='w')
+                # xl = excelpy.workbook(xlsfile=Excel,mode='w')
 		extract = dyn.xlsout(show=False,channels='', outfile='', sheet='Raw')
-		xl.close()
+		# xl.close()
 
 print 'You Are Done'
 

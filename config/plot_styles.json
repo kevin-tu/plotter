@@ -1,9 +1,9 @@
 {
-    "figure.figsize": [6.0, 4.5],
+    "figure.figsize": [6.0, 3.9],
     "grid.linewidth": 1.2,
     "grid.linestyle": "--",
     "axes.linewidth": 1.2,
-    "lines.linewidth": 0.8,
+    "lines.linewidth": 1.2,
     "figure.dpi": 80,
     "savefig.dpi": 200,
     "font.size": 12,
@@ -13,5 +13,5 @@
     "patch.facecolor": "b",
     "font.sans-serif": "Times New Roman",
     "font.family": "sans-serif",
-    "image.cmap": "jet"
+    "image.cmap": "prism"
 }
